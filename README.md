@@ -1,3 +1,17 @@
+# MakersBnB
+
+This project allows users to view, list and book rentals on MakersBnB.
+
+## Getting Started
+
+### Installing
+
+## How to Use
+
+## User Stories
+
+MVP:
+
 ```
 As a user
 So that I enter my rental details
@@ -11,6 +25,8 @@ As a user
 So I can browse rentals
 I want to see a list of properties
 ```
+More detailed:
+
 ```
 As a user
 So that I can book my stay
@@ -45,3 +61,13 @@ So that I know my place is secure
 I want to receive a confirmation of my booking
 
 ```
+
+## Reflections
+
+## Authors
+
+Keran Braich
+George Whiting
+Valentina
+Kesha
+Lea
