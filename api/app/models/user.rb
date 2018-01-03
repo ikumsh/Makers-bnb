@@ -9,6 +9,7 @@ class User
 
   property :id, Serial
   property :email, String, required: true, unique: true
+  property :name, String, required: true
   property :secure_password, Text
 
   attr_reader :password
