@@ -14,8 +14,13 @@
     <h2>List of properties</h2>
     <br>
     <ul>
-      <li>Space num1</li>
-      <li>Space num2</li>
+      <%@places.each do |place| %>
+        <li> Title: <%= place.title %> <br>
+          Address: <%= place.address %> <br>
+          Price: £ <%= place.price %> <br>
+          Description: <%= place.description%>
+        </li>
+      <%end%>
     </ul>
   </body>
 </html>

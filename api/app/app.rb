@@ -6,11 +6,13 @@ require_relative 'setup'
 
 class Mbnb < Sinatra::Base
 
+
   get '/' do
     redirect '/places'
   end
 
   get '/places' do
+    @places = Place.all
     erb :places
   end
 
@@ -19,6 +21,9 @@ class Mbnb < Sinatra::Base
   end
 
   post '/newlisting' do
+
+    place = Place.create(title: params[:title], description: params[:description], address: params[:address], price: params[:price])
+
     redirect '/places'
   end
 
