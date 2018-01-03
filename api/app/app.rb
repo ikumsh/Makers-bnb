@@ -7,7 +7,19 @@ require_relative 'setup'
 class Mbnb < Sinatra::Base
 
   get '/' do
-    "hello world"
+    redirect '/places'
+  end
+
+  get '/places' do
+    erb :places
+  end
+
+  get '/newlisting' do
+    erb :new_listing
+  end
+
+  post '/newlisting' do
+    redirect '/places'
   end
 
   run if app_file == $0
