@@ -1,4 +1,6 @@
-#require_relative './whatever_we_name_the_model'
+require_relative 'models/place'
+require 'dm-postgres-adapter'
+require 'data_mapper'
 
 DataMapper.setup(:default, "postgres://localhost/mbnb_#{ENV['RACK_ENV']}")
 DataMapper.finalize

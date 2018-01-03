@@ -1,8 +1,8 @@
-ENV['RACK_ENV'] = 'development'
+ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
 require 'json'
-#require_relative './models/'
+require_relative 'setup'
 
 class Mbnb < Sinatra::Base
 
