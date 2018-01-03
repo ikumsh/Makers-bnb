@@ -5,7 +5,7 @@ require 'json'
 require_relative 'setup'
 
 class Mbnb < Sinatra::Base
-
+  include BCrypt
 
   get '/' do
     redirect '/places'
@@ -21,12 +21,9 @@ class Mbnb < Sinatra::Base
   end
 
   post '/newlisting' do
-
     place = Place.create(title: params[:title], description: params[:description], address: params[:address], price: params[:price])
-
     redirect '/places'
   end
 
-  run if app_file == $0
-
+  run if app_file == $PROGRAM_NAME
 end

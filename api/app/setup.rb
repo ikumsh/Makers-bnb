@@ -1,4 +1,5 @@
 require_relative 'models/place'
+require_relative 'models/user'
 require 'dm-postgres-adapter'
 require 'data_mapper'
 

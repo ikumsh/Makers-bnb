@@ -2,10 +2,10 @@ describe("MBnb", function() {
   var bnb;
   var property;
 
-  beforeEach(function(){
+  beforeEach(function() {
     bnb = new MBnb();
-    property = new Space(123,"title","desc","address","price");
-});
+    property = new Space(123, "title", "desc", "address", "price");
+  });
 
 
   it("should initialize with a list", function() {
@@ -17,7 +17,7 @@ describe("MBnb", function() {
     expect(bnb.list).toContain(jasmine.objectContaining(property));
   });
 
-  it("should get the list of spaces", function(){
+  it("should get the list of spaces", function() {
     bnb.addToList("hello");
     expect(bnb.getList()).toBe(bnb.list);
   });
