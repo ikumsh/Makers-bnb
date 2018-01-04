@@ -16,3 +16,13 @@ feature 'User can view list of all the places' do
     end
   end
 end
+
+feature 'individual pages for each place' do
+  scenario 'user can click on a place and view it in another page' do
+    place = Place.create(title: 'Flat', description: 'bathtub', address: '123 Street', price: 1)
+    visit '/places'
+    click_on 'Flat'
+    expect(page).to have_current_path("/places/#{place.id}")
+    expect(page).to(have_content('Flat')) && have_content('bathtub') && have_content('123 Street') && have_content(1)
+  end
+end

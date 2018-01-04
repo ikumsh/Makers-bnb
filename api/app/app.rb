@@ -78,6 +78,9 @@ class Mbnb < Sinatra::Base
     redirect to '/places'
   end
 
+  get '/place_id' do
+    redirect("/places/#{place.id}")
+  end
 
   run if app_file == $PROGRAM_NAME
 end
