@@ -38,16 +38,16 @@ feature 'signing up' do
 end
 
 feature 'Sign in' do
-  let!(:user) do
-    User.create(email: 'example@coldmail.com', name: 'George', username: 'Chunks', password: 'password', password_confirmation: 'password')
+  before(:each) do
+    User.create(email: 'example@example.com', name: 'someone', password: '12345', password_confirmation: '12345')
   end
   scenario 'user can sign in with the correct information' do
     sign_in
-    expect(page).to have_content 'Welcome, George'
+    expect(page).to have_content 'Welcome, someone'
   end
   scenario 'user cannot sign in with incorrect information' do
     sign_in(password: 'wrong')
-    expect(page).not_to have_content 'Welcome, George'
+    expect(page).not_to have_content 'Welcome, someone'
   end
 end
 
@@ -55,13 +55,13 @@ end
 feature 'sign out' do
 
   before(:each) do
-    User.create(email: 'example@coldmail.com', name: 'George', password: 'password', password_confirmation: 'password')
+    User.create(email: 'example@example.com', name: 'someone', password: '12345', password_confirmation: '12345')
   end
   scenario 'sign in and out' do
-    sign_up
+    sign_in
     click_button 'Sign out'
     expect(page).to have_content('You have logged out successfully')
-    expect(page).not_to have_content('Welcome, George')
+    expect(page).not_to have_content('Welcome, someone')
   end
 
 end

@@ -1,17 +1,24 @@
 ENV['RACK_ENV'] ||= 'development'
 
 require 'sinatra/base'
+require 'sinatra/flash'
+require 'sinatra/partial'
 require 'json'
 require_relative 'setup'
-require 'sinatra/flash'
 require_relative 'helpers'
+
 
 class Mbnb < Sinatra::Base
   include BCrypt
-  register Sinatra::Flash
   enable :sessions
   set :session_secret, 'session'
+  register Sinatra::Flash
+  register Sinatra::Partial
+  use Rack::MethodOverride
+  set :partial_template_engine, :erb
   helpers Helpers
+  enable :partial_underscores
+
 
   get '/' do
     redirect '/places'
@@ -55,10 +62,10 @@ class Mbnb < Sinatra::Base
   end
 
   post '/sessions' do
-    @user = User.authenticate(params[:password])
+    @user = User.authenticate(params[:email], params[:password])
     if @user
       session[:user_id] = @user.id
-      redirect '/peeps'
+      redirect '/places'
     else
       flash.now[:error] = 'Email or password is incorrect'
       erb :'sessions/new'

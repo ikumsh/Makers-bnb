@@ -11,5 +11,5 @@ def sign_in(email: 'example@example.com', password: '12345')
   visit '/sessions/new'
   fill_in(:email, with: email)
   fill_in(:password, with: password)
-  click_button 'Sign In'
+  click_button('Sign In')
 end
