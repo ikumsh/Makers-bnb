@@ -1,5 +1,3 @@
-require 'pry'
-
 describe Place do
   it 'returns the title of a listing' do
     place = Place.create(title: 'title', description: "desc", address: "123 Street", price: 89)

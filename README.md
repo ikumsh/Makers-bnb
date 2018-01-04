@@ -34,7 +34,7 @@ I want to see some contact details for each property
 
 As a user
 So I can stay somewhere
-I want to be able to choose a property
+I want to be able to choose  a property
 
 As a user
 So I can manage my account
