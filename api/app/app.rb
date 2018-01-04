@@ -78,9 +78,10 @@ class Mbnb < Sinatra::Base
     redirect to '/places'
   end
 
-  get '/place_id' do
-    redirect("/places/#{place.id}")
+  get "/places/:id" do
+   @place = Place.get(params[:id])
+   erb(:"places/current_place")
   end
-
+# , locals: {space_id: params[:id]}
   run if app_file == $PROGRAM_NAME
 end
