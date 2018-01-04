@@ -12,6 +12,8 @@ class User
   property :name, String, required: true
   property :secure_password, Text
 
+  has n, :places, through: Resource
+
   attr_reader :password
   attr_accessor :password_confirmation
 
@@ -23,11 +25,8 @@ class User
     self.secure_password = BCrypt::Password.create(password)
   end
 
-  def password_auth
-    @password = BCrypt::Password.new(secure_password)
-  end
-
-  def authenticate(password)
-    password_auth == password
+  def self.authenticate(email, password)
+    user = first(email: email)
+    (user && BCrypt::Password.new(user.secure_password) == password) ? user : nil
   end
 end

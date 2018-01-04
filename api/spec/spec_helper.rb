@@ -5,7 +5,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'database_cleaner'
 require 'data_mapper'
-
+require_relative 'web_helper'
 require_relative '../app/app.rb'
 
 Capybara.app = Mbnb
