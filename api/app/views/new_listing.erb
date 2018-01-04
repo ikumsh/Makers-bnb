@@ -10,11 +10,13 @@
   <body>
     <h2>Please enter information about your property.</h2>
     <form action ="/newlisting" method ="post" align="center">
-      Title <input type ="text" name ="title" required><br>
-      Description <textarea name ="description" maxlength="500" required></textarea><br>
-      Address <input type ="text" name ="address" required><br>
-      Price £<input type ="number" name ="price" required><br>
-      <input type ="submit" value ="List This Property!">
+      <div class="form-group">
+        Title <input type ="text" class="form-control" placeholder="Enter title" name ="title" required><br>
+        Description <textarea name ="description" maxlength="500" class="form-control"  placeholder="Enter description" required></textarea><br>
+        Address <input type ="text" name ="address" class="form-control"  placeholder="Enter address" required><br>
+        Price £<input type ="number" name ="price" class="form-control"  placeholder="Enter price" required><br>
+        <input type ="submit" value ="List This Property!">
+      </div>
     </form>
   </body>
 

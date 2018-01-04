@@ -5,17 +5,19 @@
     <title>Makers Bnb</title>
   </head>
   <body>
-    <h1><%= @place.title %></h1>
-    Address:
-    <%= @place.address %>
-    <br>
-    Price: £
-    <%= @place.price %>
-    <br>
-    Description:
-    <%= @place.description%><br>
-    <form action='/bookings/new'>
-      <input type='submit' value='Book'>
-    </form>
+    <div class="jumbotron">
+      <h1><%= @place.title %></h1>
+      Address:
+      <%= @place.address %>
+      <br>
+      Price: £
+      <%= @place.price %>
+      <br>
+      Description:
+      <%= @place.description%><br>
+      <form action='/bookings/new'>
+        <input type='submit' value='Book'>
+      </form>
+    </div>
   </body>
 </html>
