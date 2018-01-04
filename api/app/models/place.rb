@@ -10,5 +10,5 @@ class Place
   property :address, Text
   property :price, Integer
 
-  has n, :bookings, :through => Resource
+  has n, :bookings, through: Resource
 end

@@ -7,7 +7,6 @@ require 'json'
 require_relative 'setup'
 require_relative 'helpers'
 
-
 class Mbnb < Sinatra::Base
   include BCrypt
   enable :sessions
@@ -18,7 +17,6 @@ class Mbnb < Sinatra::Base
   set :partial_template_engine, :erb
   helpers Helpers
   enable :partial_underscores
-
 
   get '/' do
     redirect '/places'
@@ -44,15 +42,15 @@ class Mbnb < Sinatra::Base
 
   post '/users' do
     @user = User.create(email: params[:email],
-                name: params[:name],
-                password: params[:password],
-                password_confirmation: params[:password_confirmation])
+                        name: params[:name],
+                        password: params[:password],
+                        password_confirmation: params[:password_confirmation])
 
     if @user.save
       session[:user_id] = @user.id
       redirect '/places'
     else
-      flash.now[:error] = @user.errors.values.join("<br>")
+      flash.now[:error] = @user.errors.values.join('<br>')
       erb :'/users/new'
     end
   end
@@ -78,10 +76,14 @@ class Mbnb < Sinatra::Base
     redirect to '/places'
   end
 
-  get "/places/:id" do
-   @place = Place.get(params[:id])
-   erb(:"places/current_place")
+  get '/places/:id' do
+    @place = Place.get(params[:id])
+    erb(:"places/current_place")
   end
-# , locals: {space_id: params[:id]}
+
+  # post "/bookings/new" do
+  #
+  # end
+
   run if app_file == $PROGRAM_NAME
 end

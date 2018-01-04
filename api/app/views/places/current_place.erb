@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Makers Bnb</title>
+  </head>
+  <body>
+    <h1><%= @place.title %></h1>
+    Address:
+    <%= @place.address %>
+    <br>
+    Price: £
+    <%= @place.price %>
+    <br>
+    Description:
+    <%= @place.description%><br>
+    <form action='/bookings/new'>
+      <input type='submit' value='Book'>
+    </form>
+  </body>
+</html>
