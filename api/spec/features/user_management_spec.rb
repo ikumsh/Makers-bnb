@@ -37,4 +37,31 @@ feature 'signing up' do
   end
 end
 
-feature
+feature 'Sign in' do
+  let!(:user) do
+    User.create(email: 'example@coldmail.com', name: 'George', username: 'Chunks', password: 'password', password_confirmation: 'password')
+  end
+  scenario 'user can sign in with the correct information' do
+    sign_in
+    expect(page).to have_content 'Welcome, George'
+  end
+  scenario 'user cannot sign in with incorrect information' do
+    sign_in(password: 'wrong')
+    expect(page).not_to have_content 'Welcome, George'
+  end
+end
+
+
+feature 'sign out' do
+
+  before(:each) do
+    User.create(email: 'example@coldmail.com', name: 'George', password: 'password', password_confirmation: 'password')
+  end
+  scenario 'sign in and out' do
+    sign_up
+    click_button 'Sign out'
+    expect(page).to have_content('You have logged out successfully')
+    expect(page).not_to have_content('Welcome, George')
+  end
+
+end

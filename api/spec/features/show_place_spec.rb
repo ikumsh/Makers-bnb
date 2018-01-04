@@ -3,6 +3,7 @@ require_relative '../../app/app.rb'
 feature 'User can view list of all the places' do
   scenario 'Create new listing button works' do
     visit('/places')
+    sign_up
     expect(page).to have_button('Create new listing')
   end
 
