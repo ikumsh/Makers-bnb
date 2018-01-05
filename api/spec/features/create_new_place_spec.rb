@@ -2,6 +2,7 @@ require_relative '../../app/app.rb'
 
 feature 'User can create a new space' do
   scenario "'List This Property!' button works" do
+    sign_up
     visit('/newlisting')
     fill_in 'title', with: 'Flat'
     fill_in 'description', with: 'bathtub'

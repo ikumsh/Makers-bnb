@@ -12,7 +12,8 @@ class User
   property :name, String, required: true
   property :secure_password, Text
 
-  has n, :places, through: Resource
+  has n, :places
+
 
   attr_reader :password
   attr_accessor :password_confirmation

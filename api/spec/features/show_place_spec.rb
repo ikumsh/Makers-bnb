@@ -8,7 +8,7 @@ feature 'User can view list of all the places' do
   end
 
   scenario 'Show the list of properties' do
-    place = Place.create(title: 'Flat', description: 'bathtub', address: '123 Street', price: 1)
+    place = Place.create(title: 'Flat', description: 'bathtub', address: '123 Street', price: 1, user_id: 1)
     visit('/places')
 
     within 'ul#places' do
@@ -19,7 +19,7 @@ end
 
 feature 'individual pages for each place' do
   scenario 'user can click on a place and view it in another page' do
-    place = Place.create(title: 'Flat', description: 'bathtub', address: '123 Street', price: 1)
+    place = Place.create(title: 'Flat', description: 'bathtub', address: '123 Street', price: 1, user_id: 1)
     visit '/places'
     click_on 'Flat'
     expect(page).to have_current_path("/places/#{place.id}")

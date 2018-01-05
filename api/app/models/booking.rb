@@ -7,4 +7,7 @@ class Booking
   property :id, Serial
   property :check_in, Date
   property :check_out, Date
+
+ belongs_to :place
+
 end

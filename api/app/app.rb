@@ -23,16 +23,23 @@ class Mbnb < Sinatra::Base
   end
 
   get '/places' do
+
     @places = Place.all
     erb :places
   end
 
   get '/newlisting' do
+
     erb :new_listing
   end
 
   post '/newlisting' do
-    place = Place.create(title: params[:title], description: params[:description], address: params[:address], price: params[:price])
+
+    place = Place.create(title: params[:title],
+                         description: params[:description],
+                         address: params[:address],
+                         price: params[:price],
+                         user: current_user)
     redirect '/places'
   end
 
