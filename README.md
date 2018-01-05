@@ -62,6 +62,9 @@ I want to receive a confirmation of my booking
 
 ```
 
+Background for our site made by DiegoVainilla: 
+https://diegovainilla.deviantart.com/
+
 ## Reflections
 
 ## Authors

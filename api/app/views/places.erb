@@ -5,11 +5,12 @@
     <title>MakersBnB</title>
   </head>
   <body>
-    <h1 align='center'>MakersBnB</h1>
+    <h1 align='center'>MAKERS BnB</h1>
     <% if !current_user %>
       <form action='/sessions/new' method='get' align='center'>
         <input type='submit' value='Sign In'>
       </form>
+      <br>
       <form action='/users/new' method='get' align='center'>
         <input type='submit' value='Sign Up'>
       </form>
