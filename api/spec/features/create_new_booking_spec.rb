@@ -15,5 +15,11 @@ feature 'bookings' do
     click_on 'Flat'
     click_button 'Book'
     expect(page).to have_content('Select dates:')
+    fill_in 'check-in', with: '2018-01-05'
+    click_button 'Send Request'
+    expect(current_path).to eq('/places')
   end
+
+  
+
 end

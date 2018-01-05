@@ -88,9 +88,13 @@ class Mbnb < Sinatra::Base
     erb(:"places/current_place")
   end
 
-  # post "/bookings/new" do
-  #
-  # end
+  get "/bookings/new" do
+    erb(:"bookings/new")
+  end
+
+  post "/bookings/confirm" do
+    redirect to '/places'
+  end
 
   run if app_file == $PROGRAM_NAME
 end
