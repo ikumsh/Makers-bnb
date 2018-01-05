@@ -1,0 +1,11 @@
+body {
+  padding-top: 25px;
+  background: thistle;
+  color: #333;
+}
+
+h1 {
+  margin: 25px 0 25px 0;
+  font-weight: bold;
+  color: red
+}
