@@ -12,4 +12,6 @@ class Place
 
   belongs_to :user
 
+
+
 end
