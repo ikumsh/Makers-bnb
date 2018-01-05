@@ -2,29 +2,26 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>MakersBnb</title>
+    <title>MakersBnB</title>
   </head>
   <body>
-    <h1>MakersBnb</h1>
-    <br>
+    <h1 align='center'>MakersBnB</h1>
     <% if !current_user %>
-      <form action='/sessions/new' method='get'>
+      <form action='/sessions/new' method='get' align='center'>
         <input type='submit' value='Sign In'>
       </form>
-      <form action='/users/new' method='get'>
+      <form action='/users/new' method='get' align='center'>
         <input type='submit' value='Sign Up'>
       </form>
     <% end %>
     <% if current_user %>
-    <form action="/newlisting">
+    <form action="/newlisting" align='center'>
       <input type="submit" value="Create new listing">
     </form>
     <% end %>
-
+    <h2 align='center'>List of properties</h2>
     <br>
-    <h2>List of properties</h2>
-    <br>
-    <ul id='places'>
+    <ul id='places' align='center'>
       <%@places.each do |place| %>
         <li> Title: <a href='/places/<%=place.id%>'><%= place.title %></a><br>
           Address: <%= place.address %> <br>
