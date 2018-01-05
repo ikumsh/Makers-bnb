@@ -11,10 +11,13 @@ describe Booking do
   end
 
   describe "place availability" do
+    it 'confirms non-availability of the place' do
+      Booking.create(check_in: '2018-01-04', check_out: '2018-01-07', place_id: 1)
+      expect(Booking.can_be_booked?('2018-01-04', 1)).to be(false)
+    end
     it 'confirms availability of the place' do
-      place = Place.create(title: 'title', description: "desc", address: "123 Street", price: 89)
-      booking = Booking.create(check_in: '2018-01-04', check_out: '2018-01-07', place_id: 1)
-      expect(place.available?('2018-01-04')).to be(false)
+      booking = Booking.all
+      expect(booking.can_be_booked?('2018-01-04', 1)).to be(true)
     end
   end
 end

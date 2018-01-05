@@ -85,6 +85,7 @@ class Mbnb < Sinatra::Base
 
   get '/places/:id' do
     @place = Place.get(params[:id])
+    session[:place_id] = params[:id]
     erb(:"places/current_place")
   end
 
@@ -93,7 +94,19 @@ class Mbnb < Sinatra::Base
   end
 
   post "/bookings/confirm" do
-    redirect to '/places'
+    @current_place_id = Place.get(session[:place_id]).id
+    @bookings = Booking.all
+    if @bookings.can_be_booked?(params[:check_in], @current_place_id)
+      Booking.create(check_in: params[:check_in],
+                          check_out: params[:check_out],
+                          place_id: @current_place_id)
+      p  "you booked something"
+      redirect to '/places'
+    else
+      p "date taken"
+      erb(:"bookings/new")
+    end
+
   end
 
   run if app_file == $PROGRAM_NAME
