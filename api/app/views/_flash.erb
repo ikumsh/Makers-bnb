@@ -1,15 +1,18 @@
-<% if flash[:logout] %>
-  <div id='logout'>
-    <%= flash[:logout] %>
-  </div>
-<% end %>
-<% if flash[:login] %>
-  <div id='login'>
-    <%= flash[:login] %>
-  </div>
-<% end %>
-<% if flash[:error] %>
-  <div id='error'>
-    <%= flash[:error] %>
-  </div>
-<% end %>
+<div align='center'>
+  <link rel="stylesheet" href="_flash.css">
+  <% if flash[:logout] %>
+    <div id='logout'>
+      <h5><%= flash[:logout] %></h5>
+    </div>
+  <% end %>
+  <% if flash[:login] %>
+    <div id='login'>
+      <h5><%= flash[:login] %></h5>
+    </div>
+  <% end %>
+  <% if flash[:error] %>
+    <div id='error'>
+      <h5><%= flash[:error] %></h5>
+    </div>
+  <% end %>
+</div>

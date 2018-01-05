@@ -1,5 +1,6 @@
 <% if current_user %>
   <div align='center'>
+    <link rel="stylesheet" href="_welcome.css">
     <h5>Welcome, <%= current_user.name %></h5>
     <form method='post' action='/sessions'>
       <input type='hidden' name='_method' value='delete'>
