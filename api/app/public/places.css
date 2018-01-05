@@ -1,0 +1,35 @@
+body {
+  padding-top: 55px;
+  background-image: url("https://orig00.deviantart.net/1adb/f/2016/266/1/d/1d33470856e634756c6717da043cc167-daeajax.png");
+  color: #333;
+}
+
+h1 {
+  margin: 25px 0 25px 0;
+  font-weight: bold;
+  font-family: "Courier New";
+  color: red
+}
+
+h2 {
+  margin: 25px 0 25px 0;
+  font-weight: bold;
+  font-family: "Courier New";
+  color: red
+}
+
+/*
+.header {
+    border-bottom:1px solid #eaeaea;
+}
+
+.header a {
+    display: block;
+    background-image: url("https://orig00.deviantart.net/1adb/f/2016/266/1/d/1d33470856e634756c6717da043cc167-daeajax.png");
+    background-repeat: no-repeat;
+    height:160px;
+    padding-left:280px;
+    padding-top:50px;
+    width:470px;
+    color: #eaeaea;
+} */
