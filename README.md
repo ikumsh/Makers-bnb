@@ -69,8 +69,8 @@ https://diegovainilla.deviantart.com/
 
 ## Authors
 
-Keran Braich
-George Whiting
-Valentina
-Kesha
+Keran Braich,
+George Whiting,
+Valentina,
+Kesha,
 Lea
